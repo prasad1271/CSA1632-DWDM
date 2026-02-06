@@ -19,3 +19,4 @@ h <- median_class$upper - median_class$lower
 
 median <- L + ((N/2 - cf_prev)/f)*h
 median
+
