@@ -1,0 +1,30 @@
+# Create water dataset manually
+water <- data.frame(
+  mortality = c(1247, 1668, 1462, 1278, 1258, 1307, 1682, 1426,
+                1416, 1503, 1364, 1572, 1713, 1301, 1315),
+  hardness = c(42, 39, 35, 40, 36, 38, 37, 31,
+               45, 33, 34, 29, 30, 41, 28)
+)
+
+# View data
+head(water)
+
+# Scatter plot: Mortality vs Hardness
+plot(water$hardness, water$mortality,
+     main = "Mortality vs Hardness",
+     xlab = "Hardness",
+     ylab = "Mortality",
+     pch = 16,
+     col = "blue")
+
+# Fit linear regression model
+model <- lm(mortality ~ hardness, data = water)
+
+# Add regression line
+abline(model, col = "red", lwd = 2)
+
+# Model summary
+summary(model)
+
+# Predict mortality for hardness = 88
+predict(model, data.frame(hardness = 88))
