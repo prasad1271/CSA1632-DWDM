@@ -1,0 +1,16 @@
+min <- 50000
+max <- 100000
+v <- 80000
+
+normalized_v <- (v - min) / (max - min)
+normalized_v
+data <- c(200,300,400,600,1000)
+
+# Min-max normalization
+minmax <- (data - min(data)) / (max(data) - min(data))
+
+# Z-score normalization
+zscore <- (data - mean(data)) / sd(data)
+
+minmax
+zscore
